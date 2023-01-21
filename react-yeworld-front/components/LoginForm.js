@@ -63,9 +63,9 @@ const LoginForm = ({ setIsLoggedIn }) => {
 const FormWrap = styled(Form)`
   margin: 12px 6px;
 
-  /* .ant-input-affix-wrapper-lg {
+  .ant-input-affix-wrapper-lg {
     margin: 4px 0;
-  } */
+  }
   Button {
     margin: 4px 0;
     margin-right: 16px;
