@@ -7,28 +7,36 @@ import LoginForm from "./LoginForm";
 
 const AppLayout = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const menuItems = [
+    {
+      key: "home",
+      label: (
+        <Link legacyBehavior href="/">
+          <a>에옹월드</a>
+        </Link>
+      ),
+    },
+    {
+      key: "profile",
+      label: (
+        <Link legacyBehavior href="/profile">
+          <a>프로필</a>
+        </Link>
+      ),
+    },
+    {
+      key: "signup",
+      label: (
+        <Link legacyBehavior href="/signup">
+          <a>회원가입</a>
+        </Link>
+      ),
+    },
+  ];
   return (
     <div>
-      <Menu mode="horizontal">
-        <Menu.Item>
-          <Link legacyBehavior href="/">
-            <a>에옹월드</a>
-          </Link>
-        </Menu.Item>
-        <Menu.Item>
-          <Link legacyBehavior href="/profile">
-            <a>프로필</a>
-          </Link>
-        </Menu.Item>
-        <Menu.Item>
-          <Input.Search enterButton />
-        </Menu.Item>
-        <Menu.Item>
-          <Link legacyBehavior href="/signup">
-            <a>회원가입</a>
-          </Link>
-        </Menu.Item>
-      </Menu>
+      <Menu mode="horizontal" items={menuItems} />
       <Row gutter={8}>
         <Col xs={24} md={6}>
           {isLoggedIn ? (
