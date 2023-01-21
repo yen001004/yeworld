@@ -4,7 +4,7 @@ import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import styled from "styled-components";
 import Link from "next/link";
 
-const LoginForm = () => {
+const LoginForm = ({ setIsLoggedIn }) => {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
 
@@ -16,9 +16,14 @@ const LoginForm = () => {
     setPassword(e.target.value);
   }, []);
 
+  const onSubmitForm = useCallback(() => {
+    console.log(id, password);
+    setIsLoggedIn(true);
+  }, [id, password]);
+
   return (
     <div>
-      <FormWrap>
+      <FormWrap onFinish={onSubmitForm}>
         <div>
           <Input
             size="large"
@@ -58,9 +63,9 @@ const LoginForm = () => {
 const FormWrap = styled(Form)`
   margin: 12px 6px;
 
-  .ant-input-affix-wrapper-lg {
+  /* .ant-input-affix-wrapper-lg {
     margin: 4px 0;
-  }
+  } */
   Button {
     margin: 4px 0;
     margin-right: 16px;
