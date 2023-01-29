@@ -52,7 +52,7 @@ const AppLayout = ({ children }) => {
           <a
             href="https://ye-ong.notion.site/f074983731244134851bbced4b18d1bf"
             target="_blank"
-            rel="noreferrer nooper"
+            rel="noreferrer noopener"
           >
             made by Yen
           </a>
