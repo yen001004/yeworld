@@ -3,6 +3,7 @@ import { Button, Form, Input } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import styled from "styled-components";
 import Link from "next/link";
+import PropTypes from "prop-types";
 
 const LoginForm = ({ setIsLoggedIn }) => {
   const [id, setId] = useState("");
@@ -75,5 +76,9 @@ const FormWrap = styled(Form)`
     color: black;
   }
 `;
+
+LoginForm.propTypes = {
+  setIsLoggedIn: PropTypes.func.isRequired,
+};
 
 export default LoginForm;
