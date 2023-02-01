@@ -1,15 +1,14 @@
-import {
-  configureStore,
-  legacy_createStore as createStore,
-} from "@reduxjs/toolkit";
+import { createWrapper } from "next-redux-wrapper";
+import { configureStore } from "@reduxjs/toolkit";
 import reducer from "../reducers";
 
-const configureStore = () => {
-  const store = createStore(reducer);
+const createStore = () => {
+  const store = configureStore({ reducer });
   return store;
 };
+// const store = configureStore({ reducer });
 
-const wrapper = createWrapper(configureStore, {
+const wrapper = createWrapper(createStore, {
   debug: process.env.NODE_ENV === "development",
 });
 
