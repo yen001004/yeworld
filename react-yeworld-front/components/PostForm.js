@@ -3,7 +3,7 @@ import React, { useCallback, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { addPost } from "../reducers/post";
-import { StarOutlined, UploadOutlined } from "@ant-design/icons";
+import { DeleteOutlined, UploadOutlined } from "@ant-design/icons";
 
 const props = {
   action: "https://www.mocky.io/v2/5cc8019d300000980a055e76",
@@ -41,7 +41,7 @@ const props = {
     downloadIcon: "Download",
     showRemoveIcon: true,
     removeIcon: (
-      <StarOutlined
+      <DeleteOutlined
         onClick={(e) => console.log(e, "custom removeIcon event")}
       />
     ),
@@ -73,16 +73,16 @@ const PostForm = () => {
         maxLength={140}
         placeholder="어떤 일이 있었나요?"
       />
-      <div>
+      <ButtonWrap>
         {/* <input type="file" multiple hidden ref={imageInput} />
         <Button onClick={onClickImageUpload}>이미지 업로드</Button> */}
-        <Upload {...props}>
+        <Upload {...props} className="ImgUploadButton">
           <Button icon={<UploadOutlined />}>Upload</Button>
         </Upload>
-        <Button type="primary" style={{ float: "right" }} htmlType="submit">
+        <Button type="primary" className="SubmitButton" htmlType="submit">
           업로드
         </Button>
-      </div>
+      </ButtonWrap>
       <div>
         {imagePaths.map((v) => {
           <div key={v} style={{ display: "inline-block" }}>
@@ -98,7 +98,8 @@ const PostForm = () => {
 };
 
 const FormWrap = styled(Form)`
-  margin: 12px 6px;
+  margin: 20px 8px;
+  margin-bottom: 28px;
 
   .ant-input-affix-wrapper-lg {
     margin: 4px 0;
@@ -111,6 +112,19 @@ const FormWrap = styled(Form)`
   /* input::file-selector-button {
     display: none;
   } */
+`;
+
+const ButtonWrap = styled.div`
+  display: flex;
+  margin: 12px 0;
+
+  /* .ImgUploadButton {
+    float: left;
+  } */
+
+  .SubmitButton {
+    margin-left: auto;
+  }
 `;
 
 export default PostForm;
