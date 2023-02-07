@@ -10,6 +10,7 @@
   },
   "author": "yen",
   "dependencies": {
+    "@ant-design/compatible": "^5.1.1",
     "@ant-design/icons": "^5.0.0",
     "@reduxjs/toolkit": "^1.9.2",
     "antd": "^5.1.5",

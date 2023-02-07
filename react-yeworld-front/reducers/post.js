@@ -15,9 +15,9 @@ export const initialState = {
         {
           src: "https://ifh.cc/g/NjFYq5.jpg",
         },
-        {
-          src: "https://ifh.cc/g/Q65ZBT.jpg",
-        },
+        // {
+        //   src: "https://ifh.cc/g/Q65ZBT.jpg",
+        // },
       ],
       Comments: [
         {
